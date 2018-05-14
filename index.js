@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 //middlewares
 const helmet = require('helmet');
 const logger = require('./library/customLogger');
+const globalErrorHandler = require('./middleware/globalErrorHandler');
+const routeLogger = require('./middleware/routeLogger');
 
 //Instantiating the App
 const app = express();
@@ -22,6 +24,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(helmet());
+
+app.use(globalErrorHandler.errorHandler);
+app.use(routeLogger.logIp);
+
+//Bootstrap models
+let modelsPath = './model';
+fs.readdirSync(modelsPath).forEach((file)=>{
+    if(~file.indexOf('.js')){
+        require(modelsPath + '/' +file);
+    }
+});
+//end bootstrap model
 
 //Bootstrap route
 let routesPath = './routes';
@@ -35,6 +49,9 @@ fs.readdirSync(routesPath).forEach( function (file){
     }
 
 });//end Bootstrap route
+
+
+app.use(globalErrorHandler.notFoundHandler);
 
 //creating http Server
 const server = http.createServer(app);

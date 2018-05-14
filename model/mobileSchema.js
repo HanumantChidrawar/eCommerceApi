@@ -1,95 +1,116 @@
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
 
 //import schema class from mongoose
 const schema = mongoose.Schema;
 
 let mobileSchema = new schema({
 
-    id:{
+    id: {
         type: String,
         unique: true
     },
-    category:{
+    category: {
         type: String,
         default: ""
     },
-    subCategory:{
+    brand: {
         type: String,
         default: ""
     },
-    brand:{
+    name: {
         type: String,
         default: ""
     },
-    name:{
+    images: [],
+    inTheBox: [],
+    modelNumber: {
         type: String,
-        default: type
+        default: ""
     },
-    images:[],
-    specifications:{
-        type:{
-            inTheBox:[],
-            modelNumber:{
-                type: String,
-                default: ""
-            },
-            modelName:{
-                type: String,
-                default:""
-            },
-            color:{
-                type: String,
-                default: ""
-            },
-            browseType:{
-                type: String,
-                default: ""
-            },
-            hybridSimSlot:{
-                type: String,
-                default:""
-            },
-            touchScreen:{
-                type: String,
-                default: ""
-            },
-            otgCompatible:{
-                type: String,
-                default: ""
-            },
-            quickCharging:{
-                type: String,
-                default: ""
-            },
-            warranty:{
-                type: String,
-                default: ""
-            },
-            operatingSystem:{
-                type: String,
-                default: ""
-            },
-            processorCore:{
-                type: String,
-                default: ""
-            },
-            primaryClockSpeed:{
-                type: String,
-                default: ""
-            },
-            internalStorage:{
-                type: String,
-                default: ""
-            },
-            RAM:{
-                type: String,
-                default: ""
-            },
-            memoryCardSlotType:{
-                type: String,
-                default: ""
-            }
-        }
+    modelName: {
+        type: String,
+        default: ""
+    },
+    color: {
+        type: String,
+        default: ""
+    },
+    browseType: {
+        type: String,
+        default: ""
+    },
+    hybridSimSlot: {
+        type: String,
+        default: ""
+    },
+    touchScreen: {
+        type: String,
+        default: ""
+    },
+    otgCompatible: {
+        type: String,
+        default: ""
+    },
+    quickCharging: {
+        type: String,
+        default: ""
+    },
+    warranty: {
+        type: String,
+        default: ""
+    },
+    operatingSystem: {
+        type: String,
+        default: ""
+    },
+    processorCore: {
+        type: String,
+        default: ""
+    },
+    clockSpeed: {
+        type: String,
+        default: ""
+    },
+    internalStorage: {
+        type: String,
+        default: ""
+    },
+    RAM: {
+        type: String,
+        default: ""
+    },
+    memoryCardSlotType: {
+        type: String,
+        default: ""
+    },
+    displaySize:{
+        type: String,
+        default: ""
+    },
+    resolution:{
+        type: String,
+        default: ""
+    },
+    resolutionType:{
+        type: String,
+        default: ""
+    },
+    primaryCamera:{
+        type: String,
+        default: ""
+    },
+    secondaryCamera:{
+        type: String,
+        default: ""
+    },
+    battery:{
+        type: String,
+        default: ""
+    },
+    warranty:{
+        type: String,
+        default: ""
     }
-
 });
+
+mongoose.model('Mobile', mobileSchema);
