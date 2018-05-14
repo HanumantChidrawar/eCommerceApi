@@ -3,9 +3,9 @@ const mongoose  = require('mongoose');
 //import schema class from mongoose
 const schema = mongoose.Schema;
 
-let televisionSchema = new schema({
+let televisionSchema1 = new schema({
 
-    id:{
+    productId:{
         type: String,
         unique: true
     },
@@ -29,7 +29,7 @@ let televisionSchema = new schema({
                 type: String,
                 default: ""
             },
-            modelName:{
+            productModelName:{
                 type: String,
                 default:""
             },
@@ -82,4 +82,4 @@ let televisionSchema = new schema({
 
 });
 
-mongoose.model('Television',televisionSchema);
+mongoose.model('Television',televisionSchema1);

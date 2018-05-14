@@ -3,9 +3,9 @@ const mongoose  = require('mongoose');
 //import schema class from mongoose
 const schema = mongoose.Schema;
 
-let fashionSchema = new schema({
+let fashionSchema1 = new schema({
 
-    id:{
+    productId:{
         type: String,
         unique: true
     },
@@ -61,4 +61,4 @@ let fashionSchema = new schema({
 
 });
 
-mongoose.model('Fashion',fashionSchema);
+mongoose.model('Fashion',fashionSchema1);

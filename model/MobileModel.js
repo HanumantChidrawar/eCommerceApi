@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 //import schema class from mongoose
 const schema = mongoose.Schema;
 
-let mobileSchema = new schema({
+let mobileSchema1 = new schema({
 
-    id: {
+    productId: {
         type: String,
         unique: true
     },
@@ -21,13 +21,17 @@ let mobileSchema = new schema({
         type: String,
         default: ""
     },
+    price:{
+        type: Number,
+        default: 0
+    },
     images: [],
     inTheBox: [],
     modelNumber: {
         type: String,
         default: ""
     },
-    modelName: {
+    productModelName: {
         type: String,
         default: ""
     },
@@ -113,4 +117,4 @@ let mobileSchema = new schema({
     }
 });
 
-mongoose.model('Mobile', mobileSchema);
+mongoose.model('Mobile', mobileSchema1);
