@@ -1,6 +1,6 @@
 /* to standardize the apiResponse */
 
-let generate = (err, message) => {
+let generate = (err, message,status,data) => {
 
     let response = {
         error: err,

@@ -1,64 +1,73 @@
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
 
 //import schema class from mongoose
 const schema = mongoose.Schema;
 
 let fashionSchema1 = new schema({
 
-    productId:{
+    productId: {
         type: String,
         unique: true
     },
-    category:{
+    category: {
         type: String,
         default: ""
     },
-    subCategory:{
+    subCategory: {
         type: String,
         default: ""
     },
-    brand:{
+    brand: {
         type: String,
         default: ""
     },
-    name:{
+    name: {
         type: String,
         default: ""
     },
-    images:[],
-    specifications:{
-        type:{
-            idealFor:{
-                type: String,
-                default: ""
-            },
-	    suitableFor:{
-                type: String,
-                default: ""
-            },
-            pattern:{
-                type: String,
-                default:""
-            },
-            fabric:{
-                type: String,
-                default: ""
-            },
-            faded:{
-                type: String,
-                default: ""
-            },
-            rise:{
-                type: String,
-                default:""
-            },
-            reversible:{
-                type: String,
-                default: ""
-            }
-        }
+    images: [],
+
+    idealFor: {
+        type: String,
+        default: ""
+    },
+    suitableFor: {
+        type: String,
+        default: ""
+    },
+    pattern: {
+        type: String,
+        default: ""
+    },
+    fabric: {
+        type: String,
+        default: ""
+    },
+    faded: {
+        type: String,
+        default: ""
+    },
+    rise: {
+        type: String,
+        default: ""
+    },
+    reversible: {
+        type: String,
+        default: ""
+    },
+    size:{
+        type: String,
+        default: ""
+    },
+    color:{
+        type: String,
+        default: ""
+    },
+    price:{
+        type: Number,
+        default: ""
     }
 
 });
 
-mongoose.model('Fashion',fashionSchema1);
+mongoose.model('Fashion', fashionSchema1);

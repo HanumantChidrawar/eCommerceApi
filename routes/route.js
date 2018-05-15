@@ -8,8 +8,9 @@ let setRoutes = (app) =>{
     let baseUrl = appConfig.apiVersion + '/eCommerce';
 
     app.get('/',apiControllers.hello);
-    app.get(`${baseUrl}/mobiles`, auth.isAuthenticated,apiControllers.listMobiles);
-    app.post(`${baseUrl}/mobiles/create`,auth.isAuthenticated,apiControllers.createMobile);
+    app.get(`${baseUrl}/:productType/list`, auth.isAuthenticated,apiControllers.listProducts);
+    app.post(`${baseUrl}/:productType/create`,auth.isAuthenticated,apiControllers.createProduct);
+    app.get(`${baseUrl}/:productId/veiw`,auth.isAuthenticated,apiControllers.veiwProduct);
 
 }
 

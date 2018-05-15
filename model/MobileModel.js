@@ -21,7 +21,7 @@ let mobileSchema1 = new schema({
         type: String,
         default: ""
     },
-    price:{
+    price: {
         type: Number,
         default: 0
     },
@@ -87,31 +87,31 @@ let mobileSchema1 = new schema({
         type: String,
         default: ""
     },
-    displaySize:{
+    displaySize: {
         type: String,
         default: ""
     },
-    resolution:{
+    resolution: {
         type: String,
         default: ""
     },
-    resolutionType:{
+    resolutionType: {
         type: String,
         default: ""
     },
-    primaryCamera:{
+    primaryCamera: {
         type: String,
         default: ""
     },
-    secondaryCamera:{
+    secondaryCamera: {
         type: String,
         default: ""
     },
-    battery:{
+    battery: {
         type: String,
         default: ""
     },
-    warranty:{
+    warranty: {
         type: String,
         default: ""
     }
