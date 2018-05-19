@@ -2,14 +2,12 @@ const mongoose = require('mongoose');
 
 const schema = mongoose.Schema;
 
-let cartSchema = new schema({
-
-    name:{
+let reviewModel1 = new schema({
+    productName: {
         type: String,
         default: ""
     },
-    items:[]
-    
-});//end cartSchema
+    reviews: []
+});
 
-mongoose.model('cart',cartSchema);
+mongoose.model('review', reviewModel1);
